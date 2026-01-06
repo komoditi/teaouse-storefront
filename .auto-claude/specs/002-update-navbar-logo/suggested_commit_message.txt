@@ -1,0 +1,5 @@
+```
+feat(navbar): integrate teahouse logo
+
+Add teahouse_logo.png from the /public directory to the navbar component, displaying the teahouse branding throughout the application.
+```

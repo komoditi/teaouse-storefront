@@ -17,28 +17,30 @@ export default async function Nav() {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-cream-paper border-warm-wood/20">
+      <header className="relative h-32 mx-auto border-b duration-200  ">
         <nav className="content-container txt-xsmall-plus text-warm-wood flex items-center justify-between w-full h-full text-small-regular">
+            <div className="flex items-center h-full gap-3">
+
+            <LocalizedClientLink
+              href="/"
+              className="txt-compact-xlarge-plus hover:text-warm-wood-700 transition-colors duration-200 ease-in font-display tracking-wide"
+              data-testid="nav-store-link"
+            >
+            <img
+              src="/teaouse_logo.png"
+              alt="Teaouse Logo"
+              className="h-32 w-auto"
+            />
+            </LocalizedClientLink>
+          </div>
+          
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
             </div>
           </div>
 
-          <div className="flex items-center h-full gap-3">
-            <img
-              src="/teahouse_logo.png"
-              alt="Teaouse Logo"
-              className="h-12 w-auto"
-            />
-            <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-warm-wood-700 transition-colors duration-200 ease-in font-display tracking-wide"
-              data-testid="nav-store-link"
-            >
-              Teaouse
-            </LocalizedClientLink>
-          </div>
+
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">

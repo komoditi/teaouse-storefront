@@ -30,11 +30,17 @@ export default async function Home(props: {
 
   return (
     <>
+          <div       style={{
+        backgroundImage: "url('/home_hero.png')",
+        backgroundSize: '100% auto',
+        backgroundPosition: 'center top',
+      }}>
       <Hero />
       <div className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
+      </div>
       </div>
     </>
   )
