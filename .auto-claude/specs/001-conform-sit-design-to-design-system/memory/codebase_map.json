@@ -1,0 +1,10 @@
+{
+  "discovered_files": {
+    "tailwind.config.js": {
+      "description": "Teaouse design system colors are: tea-green (#7FAE5A), warm-wood (#8B5A2B), cream-paper (#FAF6EF), ink-brown (#3A2A1F). Typography uses font-display for Playfair Display and font-accent for Caveat.",
+      "category": "design-system",
+      "discovered_at": "2026-01-06T06:55:12.650347+00:00"
+    }
+  },
+  "last_updated": "2026-01-06T06:55:12.650359+00:00"
+}

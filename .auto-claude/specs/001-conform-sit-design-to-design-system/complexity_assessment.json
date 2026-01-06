@@ -1,0 +1,92 @@
+{
+  "complexity": "standard",
+  "workflow_type": "refactor",
+  "confidence": 0.85,
+  "reasoning": "Design system conformance is a cross-cutting refactor touching 30-40+ files. The task involves updating tailwind.config.js (colors, fonts, border-radius, animations), globals.css typography classes, and numerous component files currently using pure white/black/gray colors and non-compliant styles. No external integrations or new dependencies required—this is standard CSS/Tailwind work following well-known patterns.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 35,
+      "estimated_services": 1,
+      "is_cross_cutting": true,
+      "notes": "171 TSX components total. ~39 files use bg-white/black/gray that need color updates, 14 files have rounded corners to adjust, plus tailwind config and global CSS. Core changes will cascade through design tokens."
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": [],
+      "research_needed": false,
+      "notes": "Google Fonts (Playfair Display, Libre Baskerville, Source Serif 4, Caveat) need to be added via next/font, but this is standard Next.js pattern—no external API integration."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": true,
+      "notes": "Tailwind config restructuring required. No infrastructure or deployment changes needed."
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": false,
+      "unfamiliar_tech": [],
+      "notes": "Codebase already uses Tailwind CSS + Next.js + Medusa UI preset. Design system implementation follows standard Tailwind theming patterns. Color system, typography, and component styling are well-documented practices."
+    },
+    "risk": {
+      "level": "medium",
+      "concerns": [
+        "Visual regression across many pages",
+        "Medusa UI preset may override custom theme values",
+        "Existing hardcoded color values scattered across components",
+        "Animations using cubic-bezier may need review for 'calm' feel"
+      ],
+      "notes": "Primary risk is visual inconsistency during transition. No functional or data risk. Should prioritize foundational changes (config/globals) before component updates."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "requirements",
+    "context",
+    "spec_writing",
+    "planning",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": false,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "minimal_mode": false,
+    "test_types_required": ["unit", "integration"],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Design system refactor is visual-only with no security implications. Unit tests for any utility functions, integration/snapshot tests to catch visual regressions. No E2E required since functionality unchanged. Manual visual review recommended."
+  },
+
+  "implementation_notes": {
+    "suggested_order": [
+      "1. Update tailwind.config.js with new color palette, typography, border-radius, and animation values",
+      "2. Add Google Fonts via next/font in root layout",
+      "3. Update globals.css typography classes with new font-family stack",
+      "4. Create CSS custom properties for design tokens (colors, spacing)",
+      "5. Update navigation components with wood-toned styling",
+      "6. Update button components (rounded-xl to rounded-[14px], solid fills, subtle hover)",
+      "7. Update card components (soft shadows, paper/wood tones)",
+      "8. Audit and replace all bg-white/black/gray with design system colors",
+      "9. Review and update animations for 'breathing' feel"
+    ],
+    "key_files": [
+      "tailwind.config.js",
+      "src/styles/globals.css",
+      "src/app/layout.tsx",
+      "src/modules/layout/templates/nav/index.tsx",
+      "src/modules/common/components/input/index.tsx",
+      "src/modules/common/components/modal/index.tsx"
+    ]
+  },
+
+  "created_at": "2025-01-06T12:00:00Z"
+}
