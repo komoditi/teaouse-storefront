@@ -3,7 +3,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 const Hero = () => {
   return (
     <div
-      className="h-[75vh] w-full border-b border-warm-wood-200 relative bg-cream-paper bg-no-repeat"
+      className="h-[75vh] w-full border-b border-warm-wood-200 relative bg-no-repeat"
 
     >
       <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 5 }}>
