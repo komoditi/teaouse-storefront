@@ -16,8 +16,8 @@ export default async function Nav() {
   ])
 
   return (
-    <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-32 mx-auto border-b duration-200  ">
+    <div className="fixed top-0 inset-x-0 z-50 group">
+      <header className="relative h-32 mx-auto  duration-200  ">
         <nav className="content-container txt-xsmall-plus text-warm-wood flex items-center justify-between w-full h-full text-small-regular">
             <div className="flex items-center h-full gap-3">
 
@@ -34,37 +34,50 @@ export default async function Nav() {
             </LocalizedClientLink>
           </div>
           
-          <div className="flex-1 basis-0 h-full flex items-center">
+          {/* <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
             </div>
-          </div>
+          </div>  */}
 
 
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
-              <LocalizedClientLink
-                className="hover:text-warm-wood-700 transition-colors duration-200 ease-in"
-                href="/account"
-                data-testid="nav-account-link"
-              >
-                Account
-              </LocalizedClientLink>
-            </div>
-            <Suspense
-              fallback={
-                <LocalizedClientLink
-                  className="hover:text-warm-wood-700 transition-colors duration-200 ease-in flex gap-2"
-                  href="/cart"
-                  data-testid="nav-cart-link"
-                >
-                  Cart (0)
-                </LocalizedClientLink>
-              }
+            <div
+              className="rounded-full px-3 py-1.5 flex items-center gap-x-4"
+              style={{ backgroundColor: "var(--color-warm-wood)", color: "var(--color-cream-paper)" }}
             >
-              <CartButton />
-            </Suspense>
+
+
+                        <div className="flex-1 basis-0 h-full flex items-center">
+            <div className="h-full">
+              <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
+            </div>
+          </div>
+              <div className="hidden small:flex items-center gap-x-4 h-full">
+                <LocalizedClientLink
+                  className="transition-colors duration-200 ease-in"
+                  href="/account"
+                  data-testid="nav-account-link"
+                >
+                  Account
+                </LocalizedClientLink>
+              </div>
+
+              <Suspense
+                fallback={
+                  <LocalizedClientLink
+                    className="transition-colors duration-200 ease-in flex gap-2"
+                    href="/cart"
+                    data-testid="nav-cart-link"
+                  >
+                    Cart (0)
+                  </LocalizedClientLink>
+                }
+              >
+                <CartButton />
+              </Suspense>
+            </div>
           </div>
         </nav>
       </header>
