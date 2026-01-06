@@ -1,0 +1,68 @@
+{
+  "project_root": "/Users/sky/git-projects/teaouse-storefront",
+  "project_type": "single",
+  "services": {
+    "main": {
+      "name": "main",
+      "path": "/Users/sky/git-projects/teaouse-storefront",
+      "language": "TypeScript",
+      "framework": "Next.js",
+      "type": "frontend",
+      "package_manager": "yarn",
+      "default_port": 8000,
+      "build_tool": "Webpack",
+      "styling": "Tailwind CSS",
+      "dev_command": "npm run dev",
+      "key_directories": {
+        "src": {
+          "path": "src",
+          "purpose": "Source code"
+        }
+      },
+      "dependencies": [
+        "@headlessui/react",
+        "@medusajs/js-sdk",
+        "@medusajs/ui",
+        "@radix-ui/react-accordion",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js",
+        "lodash",
+        "next",
+        "pg",
+        "qs",
+        "react",
+        "react-country-flag",
+        "react-dom",
+        "server-only",
+        "tailwindcss-radix",
+        "webpack"
+      ],
+      "dev_dependencies": [
+        "@babel/core",
+        "@medusajs/types",
+        "@medusajs/ui-preset",
+        "@types/lodash",
+        "@types/node",
+        "@types/pg",
+        "@types/react",
+        "@types/react-dom",
+        "@types/react-instantsearch-dom",
+        "ansi-colors"
+      ],
+      "services": {
+        "databases": [
+          {
+            "type": "postgresql",
+            "client": "pg"
+          }
+        ]
+      }
+    }
+  },
+  "infrastructure": {},
+  "conventions": {
+    "js_linting": "ESLint",
+    "formatting": "Prettier",
+    "typescript": true
+  }
+}

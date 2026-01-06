@@ -1,0 +1,552 @@
+{
+  "feature": "Teaouse Design System Implementation",
+  "workflow_type": "feature",
+  "workflow_rationale": "Comprehensive design system application across configuration files, global styles, and multiple UI components. This is a feature implementation that builds upon the existing Medusa starter template to establish consistent brand identity.",
+  "phases": [
+    {
+      "id": "phase-1-foundation",
+      "name": "Design Foundation",
+      "type": "implementation",
+      "description": "Configure Tailwind design tokens, Google Fonts, and global CSS foundation",
+      "depends_on": [],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Add Teaouse color palette and typography to Tailwind config",
+          "service": "main",
+          "files_to_modify": [
+            "tailwind.config.js"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "tailwind.config.js"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "node -e \"const c = require('./tailwind.config.js'); console.log(c.theme.extend.colors['tea-green'] ? 'OK' : 'FAIL')\"",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Added Teaouse design system colors (tea-green, warm-wood, cream-paper, ink-brown) with full shade palettes (50-900). Added typography font families: 'display' for Playfair Display headings and 'accent' for Caveat. Verified tea-green color key present in config. Committed in ddd99a7.",
+          "updated_at": "2026-01-06T06:55:12.625015+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Configure Google Fonts in root layout using next/font",
+          "service": "main",
+          "files_to_modify": [
+            "src/app/layout.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/app/layout.tsx"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "grep -l 'Playfair_Display' src/app/layout.tsx && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Configured Google Fonts (Playfair_Display, Inter, Caveat) in root layout using next/font/google. Added CSS custom properties for each font and applied them to the html element. Verification passed.",
+          "updated_at": "2026-01-06T06:56:13.070555+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Update globals.css with design system base styles and CSS custom properties",
+          "service": "main",
+          "files_to_modify": [
+            "src/styles/globals.css"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/styles/globals.css"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "grep -l 'cream-paper' src/styles/globals.css && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Added CSS custom properties for design tokens (colors, typography, shadows). Applied cream-paper background and ink-brown text to body. Configured Playfair Display for h1-h3 headings. Updated contrast-btn to use tea-green with rounded-xl corners. Updated autofill styles to use design system colors. Added heading utility classes (heading-xl, heading-lg, heading-md), button classes (btn-primary, btn-secondary), and card classes (card-teaouse, card-soft). Verification passed. Committed in 32bce91.",
+          "updated_at": "2026-01-06T06:58:17.322176+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-layout",
+      "name": "Layout Components",
+      "type": "implementation",
+      "description": "Apply design system to navigation, footer, hero, and main layout wrapper",
+      "depends_on": [
+        "phase-1-foundation"
+      ],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Update navigation header with wood-toned styling and Teaouse branding",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/layout/templates/nav/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/layout/templates/nav/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Header uses cream paper background",
+              "Text shows warm wood color",
+              "Teaouse branding visible"
+            ]
+          },
+          "status": "completed",
+          "notes": "Updated navigation header with Teaouse design system: cream paper background (bg-cream-paper), warm wood text (text-warm-wood), replaced 'Medusa Store' with 'Teaouse', added Playfair Display font (font-display) with tracking-wide, smooth hover transitions with warm-wood-700 color. Committed in 88fa58a.",
+          "updated_at": "2026-01-06T06:59:49.535888+00:00"
+        },
+        {
+          "id": "subtask-2-2",
+          "description": "Update footer with design system colors and Teaouse branding",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/layout/templates/footer/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/layout/templates/footer/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Footer uses ink-brown text",
+              "Teaouse branding visible",
+              "Links styled correctly"
+            ]
+          },
+          "status": "completed",
+          "notes": "Updated footer with Teaouse design system: cream-paper background, warm-wood border, ink-brown text colors, tea-green hover states, font-display for branding, and replaced all Medusa branding with Teaouse.",
+          "updated_at": "2026-01-06T07:02:17.998807+00:00"
+        },
+        {
+          "id": "subtask-2-3",
+          "description": "Update side menu panel with warm wood/cream palette",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/layout/components/side-menu/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/layout/components/side-menu/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Side menu uses warm tones",
+              "Menu items readable",
+              "Transitions smooth"
+            ]
+          },
+          "status": "completed",
+          "notes": "Updated side menu panel with warm wood/cream palette: changed background from dark overlay to cream-paper/98, added warm-wood border and shadow, menu links use font-display with ink-brown text and tea-green hover, close button styled with warm-wood tones, footer text updated to ink-brown-500, branding changed to Teaouse, smooth slide-in transition added.",
+          "updated_at": "2026-01-06T07:04:47.900483+00:00"
+        },
+        {
+          "id": "subtask-2-4",
+          "description": "Redesign hero section with Teaouse branding and cream background",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/home/components/hero/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/home/components/hero/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Hero displays Teaouse heading",
+              "Cream paper background",
+              "Tea Green CTA button"
+            ]
+          },
+          "status": "completed",
+          "notes": "Redesigned hero section with Teaouse branding: Welcome to Teaouse heading, cream paper background (bg-cream-paper), Tea Green CTA button (btn-primary), Playfair Display typography, warm-wood subtitle, and localized store link.",
+          "updated_at": "2026-01-06T07:06:42.916503+00:00"
+        },
+        {
+          "id": "subtask-2-5",
+          "description": "Apply cream paper background to main layout wrapper",
+          "service": "main",
+          "files_to_modify": [
+            "src/app/[countryCode]/(main)/layout.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/app/[countryCode]/(main)/layout.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Page background is cream",
+              "Content readable",
+              "No white gaps"
+            ]
+          },
+          "status": "completed",
+          "notes": "Applied cream paper background (#FAF6EF) to main layout wrapper by replacing fragment with div having bg-cream-paper min-h-screen classes. Ensures full page cream background with no white gaps.",
+          "updated_at": "2026-01-06T07:08:08.501489+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-components",
+      "name": "UI Components",
+      "type": "implementation",
+      "description": "Apply design system styling to cards, forms, modals, and interactive elements",
+      "depends_on": [
+        "phase-1-foundation"
+      ],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "Update product thumbnail cards with soft shadows and rounded corners",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/products/components/thumbnail/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/products/components/thumbnail/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/store",
+            "checks": [
+              "Product cards have soft shadow",
+              "Rounded corners visible",
+              "Cream/paper tones"
+            ]
+          },
+          "status": "completed",
+          "notes": "Updated thumbnail cards with: bg-cream-paper background, soft shadow (0 2px 8px rgba(58,42,31,0.08)), hover shadow elevation (0 4px 12px rgba(58,42,31,0.1)), and kept rounded-large corners. Committed as 0f912b5.",
+          "updated_at": "2026-01-06T07:09:53.686704+00:00"
+        },
+        {
+          "id": "subtask-3-2",
+          "description": "Apply Ink Brown text color to product preview",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/products/components/product-preview/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/products/components/product-preview/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/store",
+            "checks": [
+              "Product titles in ink-brown",
+              "Prices readable",
+              "No pure black text"
+            ]
+          },
+          "status": "completed",
+          "notes": "Applied Ink Brown text color to product preview. Changed product title from text-ui-fg-subtle to text-ink-brown. Updated price component: regular prices use text-ink-brown, sale prices use text-tea-green-600, and strikethrough original prices use text-ink-brown-500. Committed as 25f5592.",
+          "updated_at": "2026-01-06T07:11:22.974609+00:00"
+        },
+        {
+          "id": "subtask-3-3",
+          "description": "Update modal with rounded corners and soft styling",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/common/components/modal/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/common/components/modal/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/account",
+            "checks": [
+              "Modal has rounded corners",
+              "Background is cream-paper",
+              "Close button styled"
+            ]
+          },
+          "status": "completed",
+          "notes": "Updated modal with Teaouse design system styling: bg-cream-paper background, rounded-large (16px) corners, design system shadow, warm-wood/20 border, ink-brown/30 backdrop with blur, and styled close button with tea-green hover state.",
+          "updated_at": "2026-01-06T07:12:58.945463+00:00"
+        },
+        {
+          "id": "subtask-3-4",
+          "description": "Update form inputs with design system focus states",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/common/components/input/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/common/components/input/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/account",
+            "checks": [
+              "Input focus ring uses tea-green",
+              "Rounded corners visible",
+              "Label text ink-brown"
+            ]
+          },
+          "status": "in_progress",
+          "notes": "Updating input component with design system focus states",
+          "updated_at": "2026-01-06T07:13:42.530545+00:00"
+        },
+        {
+          "id": "subtask-3-5",
+          "description": "Update interactive links to use Tea Green color",
+          "service": "main",
+          "files_to_modify": [
+            "src/modules/common/components/interactive-link/index.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "src/modules/common/components/interactive-link/index.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:8000/",
+            "checks": [
+              "Links display in tea-green",
+              "Hover state subtle",
+              "Arrow animation smooth"
+            ]
+          },
+          "status": "pending",
+          "notes": "Update text-ui-fg-interactive to text-tea-green. Ensure arrow color matches."
+        }
+      ]
+    },
+    {
+      "id": "phase-4-verification",
+      "name": "Integration Verification",
+      "type": "integration",
+      "description": "Verify all design system changes work together across the site",
+      "depends_on": [
+        "phase-2-layout",
+        "phase-3-components"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "description": "End-to-end visual verification of design system implementation",
+          "all_services": true,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "e2e",
+            "steps": [
+              "Navigate to homepage - verify hero, nav, footer styling",
+              "Open side menu - verify warm wood styling",
+              "Navigate to /store - verify product cards with soft shadows",
+              "Navigate to /account - verify form inputs and modals",
+              "Check all pages for no pure white (#FFFFFF) or pure black (#000000)",
+              "Verify no console errors",
+              "Verify responsive behavior on mobile (375px)"
+            ]
+          },
+          "status": "pending",
+          "notes": "Comprehensive visual QA across all pages. Document any styling issues found."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 4,
+    "total_subtasks": 14,
+    "services_involved": [
+      "main"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 2,
+      "parallel_groups": [
+        {
+          "phases": [
+            "phase-2-layout",
+            "phase-3-components"
+          ],
+          "reason": "Both depend only on phase-1-foundation, different file sets (layout templates vs common components)"
+        }
+      ],
+      "recommended_workers": 2,
+      "speedup_estimate": "1.4x faster than sequential due to phase-2 and phase-3 parallelism"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 001 --parallel 2"
+  },
+  "verification_strategy": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "unit",
+      "integration"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All existing tests pass (if any)",
+      "No console errors in browser",
+      "No pure white (#FFFFFF) or pure black (#000000) in visible UI",
+      "All 'Medusa Store' references replaced with 'Teaouse'",
+      "Fonts load without FOUT (flash of unstyled text)",
+      "No bounce, elastic, or aggressive animations present",
+      "Responsive verification passes (375px, 768px breakpoints)"
+    ],
+    "verification_steps": [
+      {
+        "name": "Tailwind Config Verification",
+        "command": "node -e \"const c = require('./tailwind.config.js'); const colors = c.theme.extend.colors; console.log(colors['tea-green'] && colors['warm-wood'] && colors['cream-paper'] && colors['ink-brown'] ? 'PASS' : 'FAIL')\"",
+        "expected_outcome": "PASS",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Build Verification",
+        "command": "npm run build",
+        "expected_outcome": "Build completes without errors",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Lint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "test",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Medium risk visual refactor requires build verification and visual QA. No functional code changes means unit tests are limited to config validation."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null,
+      "notes": "No business logic changed - visual styling only"
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": [],
+      "notes": "Component rendering verified through browser verification"
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": [],
+      "notes": "Manual visual verification preferred for design system changes"
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:8000/",
+          "checks": [
+            "Hero displays Teaouse branding",
+            "Cream background",
+            "Wood-toned nav",
+            "No console errors"
+          ]
+        },
+        {
+          "url": "http://localhost:8000/store",
+          "checks": [
+            "Product cards with soft shadows",
+            "Ink-brown text",
+            "Tea-green links"
+          ]
+        },
+        {
+          "url": "http://localhost:8000/cart",
+          "checks": [
+            "Buttons have rounded corners",
+            "Form inputs styled"
+          ]
+        },
+        {
+          "url": "http://localhost:8000/account",
+          "checks": [
+            "Form inputs with tea-green focus",
+            "Modal styling correct"
+          ]
+        }
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": [],
+      "notes": "No database changes in this task"
+    },
+    "color_verification": {
+      "required": true,
+      "checks": [
+        {
+          "element": "Header background",
+          "expected": "#FAF6EF (Cream Paper)"
+        },
+        {
+          "element": "Header text",
+          "expected": "#8B5A2B (Warm Wood)"
+        },
+        {
+          "element": "Body text",
+          "expected": "#3A2A1F (Ink Brown)"
+        },
+        {
+          "element": "Primary buttons/links",
+          "expected": "#7FAE5A (Tea Green)"
+        },
+        {
+          "element": "Page backgrounds",
+          "expected": "#FAF6EF (Cream Paper)"
+        }
+      ]
+    },
+    "typography_verification": {
+      "required": true,
+      "checks": [
+        {
+          "element": "H1-H3 headings",
+          "expected": "Playfair Display"
+        },
+        {
+          "element": "Body paragraphs",
+          "expected": "Inter"
+        },
+        {
+          "element": "UI text/labels",
+          "expected": "Inter"
+        }
+      ]
+    }
+  },
+  "qa_signoff": null,
+  "status": "in_progress",
+  "planStatus": "in_progress",
+  "updated_at": "2026-01-06T06:53:36.237Z",
+  "last_updated": "2026-01-06T07:13:42.530555+00:00"
+}

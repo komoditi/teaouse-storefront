@@ -1,0 +1,84 @@
+{
+  "task_description": "Conform the site design to the Teaouse Design System - a calm, premium, illustrated tea brand experience emphasizing ritual over speed, warmth over sharpness, and story over noise.",
+  "scoped_services": ["main"],
+  "files_to_modify": {
+    "main": [
+      "tailwind.config.js",
+      "src/app/layout.tsx",
+      "src/styles/globals.css",
+      "src/modules/layout/templates/nav/index.tsx",
+      "src/modules/layout/templates/footer/index.tsx",
+      "src/modules/layout/components/side-menu/index.tsx",
+      "src/modules/home/components/hero/index.tsx",
+      "src/modules/products/components/thumbnail/index.tsx",
+      "src/modules/products/components/product-preview/index.tsx",
+      "src/modules/common/components/modal/index.tsx",
+      "src/modules/common/components/input/index.tsx",
+      "src/modules/common/components/interactive-link/index.tsx",
+      "src/app/[countryCode]/(main)/layout.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "tailwind.config.js",
+    "src/styles/globals.css",
+    "src/modules/layout/templates/nav/index.tsx",
+    "src/modules/products/components/thumbnail/index.tsx"
+  ],
+  "patterns": {
+    "tailwind_extension": "Colors defined in theme.extend.colors with semantic naming (e.g., grey-0 through grey-90). Add design tokens in same pattern.",
+    "css_layers": "@layer components {} used in globals.css for reusable utility classes. Add design system classes here.",
+    "clx_conditional": "Use clx() from @medusajs/ui for conditional class composition: clx('base-classes', className, { conditional: true })",
+    "component_styling": "Components use Tailwind classes directly. Medusa UI preset classes like bg-ui-bg-subtle, text-ui-fg-base used throughout.",
+    "text_utilities": "Text sizing uses txt-compact-medium, txt-small-plus patterns from Medusa UI",
+    "transitions": "Use transition-colors duration-200 ease-in for hover states. Current animations use cubic-bezier - review for calm feel."
+  },
+  "existing_implementations": {
+    "description": "Existing Medusa starter template uses grey color scale, Inter font, and Medusa UI preset. Current styling includes bg-white, border-ui-border-base, shadow-elevation-card-rest.",
+    "relevant_files": [
+      "tailwind.config.js",
+      "src/styles/globals.css",
+      "src/app/layout.tsx"
+    ],
+    "branding_locations": [
+      "src/modules/layout/templates/nav/index.tsx - 'Medusa Store' in header",
+      "src/modules/layout/templates/footer/index.tsx - 'Medusa Store' and Medusa links",
+      "src/modules/layout/components/side-menu/index.tsx - 'Medusa Store' copyright",
+      "src/modules/home/components/hero/index.tsx - 'Ecommerce Starter Template' heading"
+    ]
+  },
+  "design_system": {
+    "colors": {
+      "primary_ui": {
+        "tea-green": "#7FAE5A",
+        "warm-wood": "#8B5A2B",
+        "cream-paper": "#FAF6EF",
+        "ink-brown": "#3A2A1F"
+      },
+      "secondary_story": {
+        "green-tea": "#9FCB7B",
+        "white-tea": "#E8E2D6",
+        "yellow-tea": "#F2C94C",
+        "oolong": "#D9A441",
+        "black-tea": "#8C4A32",
+        "dark-tea": "#4B2E24"
+      }
+    },
+    "typography": {
+      "headings": "Playfair Display",
+      "body": "Inter",
+      "accent": "Caveat"
+    },
+    "border_radius": {
+      "buttons": "12-16px (rounded-xl or rounded-2xl)",
+      "cards": "16px (rounded-large or rounded-2xl)"
+    },
+    "constraints": {
+      "no_pure_white": "#FFFFFF banned - use cream-paper instead",
+      "no_pure_black": "#000000 banned - use ink-brown instead",
+      "no_gradients": "Unless extremely subtle",
+      "no_bounce_animations": "Use ease-in, no elastic easing"
+    }
+  },
+  "created_at": "2026-01-06T14:42:41.857117",
+  "updated_at": "2026-01-06T15:30:00.000000"
+}
