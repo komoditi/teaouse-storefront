@@ -2,6 +2,49 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* ==========================================================================
+   Teaouse Design System - CSS Custom Properties
+   ========================================================================== */
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-tea-green: #7FAE5A;
+    --color-warm-wood: #8B5A2B;
+    --color-cream-paper: #FAF6EF;
+    --color-ink-brown: #3A2A1F;
+
+    /* Typography */
+    --font-heading: var(--font-playfair-display), Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-body: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    --font-accent: var(--font-caveat), Caveat, cursive;
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px rgba(58, 42, 31, 0.08);
+    --shadow-card: 0 4px 12px rgba(58, 42, 31, 0.1);
+
+    /* Transitions */
+    --transition-base: 200ms ease-in;
+  }
+
+  /* Apply design system defaults to body */
+  body {
+    @apply bg-cream-paper text-ink-brown font-sans;
+    font-family: var(--font-body);
+  }
+
+  /* Heading typography - Playfair Display */
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    @apply text-ink-brown;
+  }
+
+  /* Ensure smooth transitions on interactive elements */
+  a {
+    @apply transition-colors duration-200 ease-in;
+  }
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -35,9 +78,9 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid #212121;
-    -webkit-text-fill-color: #212121;
-    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    border: 1px solid var(--color-ink-brown);
+    -webkit-text-fill-color: var(--color-ink-brown);
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-cream-paper) inset;
     transition: background-color 5000s ease-in-out 0s;
   }
 
@@ -55,7 +98,7 @@
   }
 
   .contrast-btn {
-    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    @apply px-4 py-2 border border-tea-green text-tea-green rounded-xl hover:bg-tea-green hover:text-cream-paper transition-colors duration-200 ease-in;
   }
 
   .text-xsmall-regular {
@@ -108,5 +151,52 @@
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
+  }
+
+  /* Teaouse Design System - Heading Styles */
+  .heading-display {
+    font-family: var(--font-heading);
+    @apply text-ink-brown;
+  }
+
+  .heading-xl {
+    font-family: var(--font-heading);
+    @apply text-3xl-regular text-ink-brown;
+  }
+
+  .heading-lg {
+    font-family: var(--font-heading);
+    @apply text-2xl-regular text-ink-brown;
+  }
+
+  .heading-md {
+    font-family: var(--font-heading);
+    @apply text-xl-regular text-ink-brown;
+  }
+
+  /* Teaouse Design System - Accent Text */
+  .text-accent {
+    font-family: var(--font-accent);
+  }
+
+  /* Teaouse Design System - Primary Button */
+  .btn-primary {
+    @apply px-6 py-3 bg-tea-green text-cream-paper rounded-xl hover:bg-tea-green-600 transition-colors duration-200 ease-in font-medium;
+  }
+
+  /* Teaouse Design System - Secondary Button */
+  .btn-secondary {
+    @apply px-6 py-3 bg-warm-wood text-cream-paper rounded-xl hover:bg-warm-wood-600 transition-colors duration-200 ease-in font-medium;
+  }
+
+  /* Teaouse Design System - Card Styles */
+  .card-teaouse {
+    @apply bg-cream-paper rounded-large;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-soft {
+    @apply bg-cream-paper-100 rounded-large;
+    box-shadow: var(--shadow-soft);
   }
 }
