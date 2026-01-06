@@ -47,8 +47,9 @@
             "command": "grep -l 'Playfair_Display' src/app/layout.tsx && echo 'OK' || echo 'FAIL'",
             "expected": "OK"
           },
-          "status": "pending",
-          "notes": "Import Playfair_Display, Inter, and Caveat from next/font/google. Apply font CSS variables to html element."
+          "status": "completed",
+          "notes": "Configured Google Fonts (Playfair_Display, Inter, Caveat) in root layout using next/font/google. Added CSS custom properties for each font and applied them to the html element. Verification passed.",
+          "updated_at": "2026-01-06T06:56:13.070555+00:00"
         },
         {
           "id": "subtask-1-3",
@@ -66,8 +67,9 @@
             "command": "grep -l 'cream-paper' src/styles/globals.css && echo 'OK' || echo 'FAIL'",
             "expected": "OK"
           },
-          "status": "pending",
-          "notes": "Add CSS custom properties for design tokens. Update contrast-btn class to use Tea Green. Add heading and body text utility classes."
+          "status": "completed",
+          "notes": "Added CSS custom properties for design tokens (colors, typography, shadows). Applied cream-paper background and ink-brown text to body. Configured Playfair Display for h1-h3 headings. Updated contrast-btn to use tea-green with rounded-xl corners. Updated autofill styles to use design system colors. Added heading utility classes (heading-xl, heading-lg, heading-md), button classes (btn-primary, btn-secondary), and card classes (card-teaouse, card-soft). Verification passed. Committed in 32bce91.",
+          "updated_at": "2026-01-06T06:58:17.322176+00:00"
         }
       ]
     },
@@ -101,8 +103,9 @@
               "Teaouse branding visible"
             ]
           },
-          "status": "pending",
-          "notes": "Replace bg-white with bg-cream-paper. Update text colors to warm-wood. Replace 'Medusa Store' with 'Teaouse'."
+          "status": "completed",
+          "notes": "Updated navigation header with Teaouse design system: cream paper background (bg-cream-paper), warm wood text (text-warm-wood), replaced 'Medusa Store' with 'Teaouse', added Playfair Display font (font-display) with tracking-wide, smooth hover transitions with warm-wood-700 color. Committed in 88fa58a.",
+          "updated_at": "2026-01-06T06:59:49.535888+00:00"
         },
         {
           "id": "subtask-2-2",
@@ -124,8 +127,9 @@
               "Links styled correctly"
             ]
           },
-          "status": "pending",
-          "notes": "Replace 'Medusa Store' with 'Teaouse'. Update text colors. Remove Medusa-specific links section."
+          "status": "completed",
+          "notes": "Updated footer with Teaouse design system: cream-paper background, warm-wood border, ink-brown text colors, tea-green hover states, font-display for branding, and replaced all Medusa branding with Teaouse.",
+          "updated_at": "2026-01-06T07:02:17.998807+00:00"
         },
         {
           "id": "subtask-2-3",
@@ -537,5 +541,5 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-06T06:53:36.237Z",
-  "last_updated": "2026-01-06T06:55:12.625024+00:00"
+  "last_updated": "2026-01-06T07:02:17.998817+00:00"
 }
