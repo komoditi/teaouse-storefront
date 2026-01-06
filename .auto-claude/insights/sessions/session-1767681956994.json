@@ -1,0 +1,21 @@
+{
+  "id": "session-1767681956994",
+  "projectId": "48293ba5-562e-4c61-bdf0-3f82aa6e7337",
+  "title": "What is the architecture of this project?",
+  "messages": [
+    {
+      "id": "msg-1767681956995",
+      "role": "user",
+      "content": "What is the architecture of this project?",
+      "timestamp": "2026-01-06T06:45:56.995Z"
+    },
+    {
+      "id": "msg-1767681984023",
+      "role": "user",
+      "content": "what is the architecture of this project?",
+      "timestamp": "2026-01-06T06:46:24.023Z"
+    }
+  ],
+  "createdAt": "2026-01-06T06:45:56.994Z",
+  "updatedAt": "2026-01-06T06:46:24.023Z"
+}
