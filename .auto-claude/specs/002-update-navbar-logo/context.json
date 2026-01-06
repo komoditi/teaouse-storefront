@@ -1,0 +1,8 @@
+{
+  "task_description": "Integrate teahouse_logo.png from /public as the logo in the application's navbar component",
+  "scoped_services": ["navbar"],
+  "files_to_modify": ["src/components/Navbar.tsx"],
+  "files_to_reference": [],
+  "patterns": {},
+  "service_contexts": {}
+}

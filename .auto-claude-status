@@ -1,25 +1,25 @@
 {
   "active": true,
-  "spec": "001-conform-sit-design-to-design-system",
+  "spec": "002-update-navbar-logo",
   "state": "building",
   "subtasks": {
-    "completed": 11,
-    "total": 14,
+    "completed": 0,
+    "total": 1,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "UI Components",
-    "id": null,
-    "total": 5
+    "current": "Implementation",
+    "id": 1,
+    "total": 1
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 12,
-    "started_at": "2026-01-06T14:53:37.163812"
+    "number": 1,
+    "started_at": "2026-01-06T21:50:15.483125"
   },
-  "last_update": "2026-01-06T15:13:14.828083"
+  "last_update": "2026-01-06T21:50:15.537162"
 }

@@ -1,0 +1,145 @@
+{
+  "project_root": "/Users/sky/git-projects/teaouse-storefront",
+  "project_type": "single",
+  "services": {
+    "main": {
+      "name": "main",
+      "path": "/Users/sky/git-projects/teaouse-storefront",
+      "language": "TypeScript",
+      "framework": "Next.js",
+      "type": "frontend",
+      "package_manager": "yarn",
+      "default_port": 8000,
+      "build_tool": "Webpack",
+      "styling": "Tailwind CSS",
+      "dev_command": "npm run dev",
+      "key_directories": {
+        "src": {
+          "path": "src",
+          "purpose": "Source code"
+        }
+      },
+      "dependencies": [
+        "@headlessui/react",
+        "@medusajs/js-sdk",
+        "@medusajs/ui",
+        "@radix-ui/react-accordion",
+        "@stripe/react-stripe-js",
+        "@stripe/stripe-js",
+        "lodash",
+        "next",
+        "pg",
+        "qs",
+        "react",
+        "react-country-flag",
+        "react-dom",
+        "server-only",
+        "tailwindcss-radix",
+        "webpack"
+      ],
+      "dev_dependencies": [
+        "@babel/core",
+        "@medusajs/types",
+        "@medusajs/ui-preset",
+        "@types/lodash",
+        "@types/node",
+        "@types/pg",
+        "@types/react",
+        "@types/react-dom",
+        "@types/react-instantsearch-dom",
+        "ansi-colors"
+      ],
+      "environment": {
+        "variables": {
+          "MEDUSA_BACKEND_URL": {
+            "value": "http://localhost:9000",
+            "source": ".env",
+            "type": "url",
+            "sensitive": false,
+            "required": false
+          },
+          "NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY": {
+            "value": "<REDACTED>",
+            "source": ".env",
+            "type": "string",
+            "sensitive": true,
+            "required": false
+          },
+          "NEXT_PUBLIC_BASE_URL": {
+            "value": "http://localhost:8000",
+            "source": ".env",
+            "type": "url",
+            "sensitive": false,
+            "required": false
+          },
+          "NEXT_PUBLIC_DEFAULT_REGION": {
+            "value": "sg",
+            "source": ".env",
+            "type": "string",
+            "sensitive": false,
+            "required": false
+          },
+          "NEXT_PUBLIC_STRIPE_KEY": {
+            "value": "<REDACTED>",
+            "source": ".env",
+            "type": "string",
+            "sensitive": true,
+            "required": false
+          },
+          "NEXT_PUBLIC_MEDUSA_PAYMENTS_PUBLISHABLE_KEY": {
+            "value": "<REDACTED>",
+            "source": ".env",
+            "type": "string",
+            "sensitive": true,
+            "required": false
+          },
+          "NEXT_PUBLIC_MEDUSA_PAYMENTS_ACCOUNT_ID": {
+            "value": "",
+            "source": ".env",
+            "type": "string",
+            "sensitive": false,
+            "required": false
+          },
+          "REVALIDATE_SECRET": {
+            "value": "<REDACTED>",
+            "source": ".env",
+            "type": "string",
+            "sensitive": true,
+            "required": false
+          },
+          "MEDUSA_CLOUD_S3_HOSTNAME": {
+            "value": "",
+            "source": ".env",
+            "type": "string",
+            "sensitive": false,
+            "required": false
+          },
+          "MEDUSA_CLOUD_S3_PATHNAME": {
+            "value": "",
+            "source": ".env",
+            "type": "string",
+            "sensitive": false,
+            "required": false
+          }
+        },
+        "required_count": 0,
+        "optional_count": 0,
+        "detected_count": 10
+      },
+      "services": {
+        "databases": [
+          {
+            "type": "postgresql",
+            "client": "pg"
+          }
+        ]
+      }
+    }
+  },
+  "infrastructure": {},
+  "conventions": {
+    "js_linting": "ESLint",
+    "formatting": "Prettier",
+    "typescript": true
+  }
+}
