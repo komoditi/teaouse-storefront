@@ -151,8 +151,9 @@
               "Transitions smooth"
             ]
           },
-          "status": "pending",
-          "notes": "Update dark background to warm wood tones. Update text colors. Replace 'Medusa Store' copyright with 'Teaouse'."
+          "status": "completed",
+          "notes": "Updated side menu panel with warm wood/cream palette: changed background from dark overlay to cream-paper/98, added warm-wood border and shadow, menu links use font-display with ink-brown text and tea-green hover, close button styled with warm-wood tones, footer text updated to ink-brown-500, branding changed to Teaouse, smooth slide-in transition added.",
+          "updated_at": "2026-01-06T07:04:47.900483+00:00"
         },
         {
           "id": "subtask-2-4",
@@ -174,8 +175,9 @@
               "Tea Green CTA button"
             ]
           },
-          "status": "pending",
-          "notes": "Update heading text to Teaouse brand messaging. Apply cream background. Update CTA button to Tea Green. Use Playfair Display for headings."
+          "status": "completed",
+          "notes": "Redesigned hero section with Teaouse branding: Welcome to Teaouse heading, cream paper background (bg-cream-paper), Tea Green CTA button (btn-primary), Playfair Display typography, warm-wood subtitle, and localized store link.",
+          "updated_at": "2026-01-06T07:06:42.916503+00:00"
         },
         {
           "id": "subtask-2-5",
@@ -197,8 +199,9 @@
               "No white gaps"
             ]
           },
-          "status": "pending",
-          "notes": "Wrap children in container with bg-cream-paper. Ensure full-height coverage."
+          "status": "completed",
+          "notes": "Applied cream paper background (#FAF6EF) to main layout wrapper by replacing fragment with div having bg-cream-paper min-h-screen classes. Ensures full page cream background with no white gaps.",
+          "updated_at": "2026-01-06T07:08:08.501489+00:00"
         }
       ]
     },
@@ -232,8 +235,9 @@
               "Cream/paper tones"
             ]
           },
-          "status": "pending",
-          "notes": "Update bg-ui-bg-subtle to cream tones. Ensure rounded-large (16px) corners. Add soft box-shadow."
+          "status": "completed",
+          "notes": "Updated thumbnail cards with: bg-cream-paper background, soft shadow (0 2px 8px rgba(58,42,31,0.08)), hover shadow elevation (0 4px 12px rgba(58,42,31,0.1)), and kept rounded-large corners. Committed as 0f912b5.",
+          "updated_at": "2026-01-06T07:09:53.686704+00:00"
         },
         {
           "id": "subtask-3-2",
@@ -255,8 +259,9 @@
               "No pure black text"
             ]
           },
-          "status": "pending",
-          "notes": "Update text-ui-fg-subtle to text-ink-brown. Ensure price displays correctly."
+          "status": "completed",
+          "notes": "Applied Ink Brown text color to product preview. Changed product title from text-ui-fg-subtle to text-ink-brown. Updated price component: regular prices use text-ink-brown, sale prices use text-tea-green-600, and strikethrough original prices use text-ink-brown-500. Committed as 25f5592.",
+          "updated_at": "2026-01-06T07:11:22.974609+00:00"
         },
         {
           "id": "subtask-3-3",
@@ -541,5 +546,5 @@
   "status": "in_progress",
   "planStatus": "in_progress",
   "updated_at": "2026-01-06T06:53:36.237Z",
-  "last_updated": "2026-01-06T07:02:17.998817+00:00"
+  "last_updated": "2026-01-06T07:11:22.974624+00:00"
 }
