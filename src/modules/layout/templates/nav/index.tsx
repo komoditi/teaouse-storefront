@@ -25,7 +25,12 @@ export default async function Nav() {
             </div>
           </div>
 
-          <div className="flex items-center h-full">
+          <div className="flex items-center h-full gap-3">
+            <img
+              src="/teahouse_logo.png"
+              alt="Teaouse Logo"
+              className="h-12 w-auto"
+            />
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus hover:text-warm-wood-700 transition-colors duration-200 ease-in font-display tracking-wide"
