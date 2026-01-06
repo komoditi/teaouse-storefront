@@ -4,11 +4,7 @@ const Hero = () => {
   return (
     <div
       className="h-[75vh] w-full border-b border-warm-wood-200 relative bg-cream-paper bg-no-repeat"
-      style={{
-        backgroundImage: "url('/home_hero.png')",
-        backgroundSize: '100% auto',
-        backgroundPosition: 'center top',
-      }}
+
     >
       <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 5 }}>
         <div
